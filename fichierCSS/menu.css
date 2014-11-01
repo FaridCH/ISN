@@ -1,0 +1,70 @@
+#menu, #menu ul /* Liste */     
+2{
+3        padding : 0; /* pas de marge intérieure */
+4        margin : 0; /* ni extérieure */
+5        list-style : none; /* on supprime le style par défaut de la liste */
+6        line-height : 21px; /* on définit une hauteur pour chaque élément */
+7        text-align : center; /* on centre le texte qui se trouve dans la liste */
+8}
+9
+10#menu /* Ensemble du menu */
+11{
+12        font-weight : bold; /* on met le texte en gras */
+13        font-family : Arial; /* on utilise Arial, c'est plus beau ^^ */
+14        font-size : 12px; /* hauteur du texte : 12 pixels */
+15}
+16
+17#menu a /* Contenu des listes */
+18{
+19        display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+20        padding : 0; /* aucune marge intérieure */
+21        background : #000; /* couleur de fond */        
+22        color : #fff; /* couleur du texte */
+23        text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
+24        width : 144px; /* largeur */
+25}
+26
+27#menu li /* Elements des listes */      
+28{ 
+29        float : left; 
+30        /* pour IE qui ne reconnaît pas "transparent" */
+31        border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+32}
+33
+34/* IE ne reconnaissant pas le sélecteur ">" */
+35html>body #menu li
+36{
+37        border-right: 1px solid transparent ; /* on met une bordure transparente à droite de chaque élément */
+38}
+39
+40#menu li ul /* Sous-listes */
+41{ 
+42        position: absolute; /* Position absolue */
+43        width: 144px; /* Largeur des sous-listes */
+44        left: -999em; /* Hop, on envoie loin du champ de vision */
+45}
+46
+47
+48#menu li ul li /* Éléments de sous-listes */
+49{
+50        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+51        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+52}
+53
+54/* IE ne reconnaissant pas le sélecteur ">" */
+55html>body #menu li ul li                
+56{
+57        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque élément */
+58}
+59
+60#menu li ul ul 
+61{
+62        margin    : -22px 0 0 144px ; /* On décale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+63        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+64        border-left     : 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */      
+65}
+66
+67/* IE ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+68html>body #menu li ul ul                
+69{
+70        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque élément */
